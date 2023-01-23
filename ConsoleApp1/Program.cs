@@ -17,22 +17,16 @@ class Program
         List<Todos> filtereData = new List<Todos>();
 
         int userId = 1;
-        for (int i = 0; i < data.Count; i++)
-        {
-            if (data[i].userId == userId)
-            {
-                filtereData.Add(data[i]);
-            }
-            else
-            {
-                continue;
-            }
-        }
+
+        IEnumerable<Todos> todosQuery = 
+            from item in data
+            where item.userId == userId
+            select item;
 
         Console.WriteLine("the provided userId = " + userId +". The userId of every item in the filtered list is:");
-        for (int i = 0; i < filtereData.Count; i++)
+        foreach (var item in todosQuery)
         {
-            Console.WriteLine(filtereData[i].userId);
+            Console.WriteLine(item.userId);
         }
     }
 }
