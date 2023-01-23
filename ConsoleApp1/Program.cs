@@ -29,6 +29,7 @@ class Program
             }
         }
 
+        Console.WriteLine("the provided userId = " + userId +". The userId of every item in the filtered list is:");
         for (int i = 0; i < filtereData.Count; i++)
         {
             Console.WriteLine(filtereData[i].userId);
