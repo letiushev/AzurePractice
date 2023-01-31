@@ -1,6 +1,6 @@
 ﻿using Npgsql;
 
-string connectionString = "Host=localhost;Port=5432;Database=PostgreSQL 15;Username=postgres;Password=;";
+string connectionString = "Host=localhost;Port=5432;Database=PostgreSQL 15;Username=postgres;Password=12345;";
 
 await using var conn = new NpgsqlConnection(connectionString);
 await conn.OpenAsync();
